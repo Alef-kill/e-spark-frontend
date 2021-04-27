@@ -1,36 +1,37 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/auth";
-import { HeaderMenu } from "../../components/HeaderMenu";
-import { LeftMenu } from "../../components/LeftMenu";
-import { Footer } from "../../components/Footer";
-import { Cadastro } from "../../components/Cadastro";
-import { Login } from "../../components/Login";
-import "./user.css";
+import { HeaderMenu } from "../../components/HeaderMenu/";
+import { LeftMenu } from "../../components/LeftMenu/";
+import { Footer } from "../../components/Footer/";
+import { Cadastro } from "../../components/Cadastro/";
+import { Login } from "../../components/Login/";
+import "./dados.css";
 
-const User = () => {
+const Dados = () => {
   const { isLoginActive, isCadastroActive } = useContext(AuthContext);
   return (
     <section className="container-dados">
       <HeaderMenu />
       <LeftMenu />
       <h1 className="container-dados-h1">Alteração de Dados</h1>
-      <form id="form-dados">
+      <form class="form-dados">
         <section id="coluna-1">
           <section>
-            <label>Nome Completo:</label>
+            <label class="label">Nome Completo:</label>
             <section class="break2"></section>
             <input
               type="text"
-              class="name"
+              class="input"
+              id="name"
               placeholder="Ex.: Bruno Silva Gomes"
               required="required"
             ></input>
           </section>
           <section class="break"></section>
           <section>
-            <label>Gênero:</label>
+            <label class="label">Gênero:</label>
             <section class="break2"></section>
-            <select name="gender" required="required">
+            <select id="gender" class="select" required="required">
               <option value="" disabled selected>
                 Selecione
               </option>
@@ -42,11 +43,12 @@ const User = () => {
           </section>
           <section class="break"></section>
           <section>
-            <label>Telefone:</label>
+            <label class="label">Celular:</label>
             <section class="break2"></section>
             <input
               type="text"
-              id="tel"
+              id="cel"
+              class="input"
               placeholder="Ex.: (00) 00000-0000"
               required="required"
               maxlength="11"
@@ -54,11 +56,12 @@ const User = () => {
           </section>
           <section class="break"></section>
           <section>
-            <label>RG:</label>
+            <label class="label">RG:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="rg"
+              class="input"
               placeholder="Ex.: 00.000.000"
               required="required"
               maxlenght="7"
@@ -66,11 +69,12 @@ const User = () => {
           </section>
           <section class="break"></section>
           <section>
-            <label>CPF:</label>
+            <label class="label">CPF:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="cpf"
+              class="input"
               placeholder="Ex.: 000.000.000-00"
               required="required"
               maxlenght="11"
@@ -78,11 +82,12 @@ const User = () => {
           </section>
           <section class="break"></section>
           <section>
-            <label>CNH:</label>
+            <label class="label">CNH:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="cnh"
+              class="input"
               placeholder="Ex.: 00000000000/UF"
               required="required"
               maxlenght="14"
@@ -105,26 +110,33 @@ const User = () => {
 
         <section id="coluna-2">
           <section>
-            <label>E-Mail:</label>
+            <label class="label">E-Mail:</label>
             <section class="break2"></section>
             <input
               type="text"
-              class="mail"
+              id="mail"
+              class="input"
               placeholder="Ex.: user@xxxxx.com"
               required="required"
             ></input>
           </section>
           <section class="break"></section>
-          <label class="dataNasc">Data de Nascimento:</label>
+          <label class="label">Data de Nascimento:</label>
           <section class="break2"></section>
-          <input type="date" name="dataNasc" required="required"></input>
+          <input
+            type="date"
+            id="dataNasc"
+            class="input"
+            required="required"
+          ></input>
           <section class="break"></section>
           <section>
-            <label>Telefone:</label>
+            <label class="label">Telefone:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="tel"
+              class="input"
               placeholder="Ex.: (00) 00000-0000"
               required="required"
               maxlength="11"
@@ -132,33 +144,36 @@ const User = () => {
           </section>
           <section class="break"></section>
           <section>
-            <label>Logradouro, nº:</label>
+            <label class="label">Logradouro, nº:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="streetNumb"
+              class="input"
               placeholder="Ex.: Rua dos Bobos, nº0"
               required="required"
             ></input>
           </section>
           <section class="break"></section>
           <section>
-            <label>Bairro:</label>
+            <label class="label">Bairro:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="district"
+              class="input"
               placeholder="Ex.: Primeiro de Maio"
               required="required"
             ></input>
           </section>
           <section class="break"></section>
           <section>
-            <label>CEP:</label>
+            <label class="label">CEP:</label>
             <section class="break2"></section>
             <input
               type="text"
               id="cep"
+              class="input"
               placeholder="Ex.: 00.000-000"
               required="required"
               maxlenght="7"
@@ -175,4 +190,4 @@ const User = () => {
   );
 };
 
-export  { User }; 
+export default Dados;

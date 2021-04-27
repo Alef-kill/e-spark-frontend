@@ -1,4 +1,4 @@
-h1 {
+.container-dados-h1 {
   text-align: center;
   color: var(--text-color);
   padding-top: 14mm;
@@ -20,19 +20,19 @@ h1 {
   align-items: center;
 }
 
-form {
+.form-dados {
   margin-left: 390px;
   margin-top: 50px;
   display: flex;
 }
 
-label {
+.label {
   color: var(--text-color);
   padding: 2mm;
 }
 
-input,
-select {
+.input,
+.select {
   border-radius: 5px;
   outline: none;
   background: #e2d7f5;
