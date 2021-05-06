@@ -28,22 +28,22 @@
     font-size: 11px;
 }
 
-img {
+.img-pagamento img {
     max-height: 100px;
 }
 
-figure {
+.img-pagamento {
     display: flex;
     justify-content: center;
     padding: 4em 0;
 }
 
-main{
+.main-pagamento{
     display: flex;
     justify-content: center;
 }
 
-label {
+.container-pagamento .detalhe-interno {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,13 +57,13 @@ label {
     padding-top: 3em;
 }
 
-.titulo {
+.titulo-pagamento {
     font-size: 30px;
     text-align: center;
     color: var(--corAzulPrincipal);
 }
 
-.descricao {
+.descricao-pagamento {
     text-align: center;
     color: var(--corAzulPrincipal);
     padding-top: 10px;
@@ -83,7 +83,7 @@ label {
     font-size: 15px;
 }
 
-.container-botoes {
+.pagamento-container-botoes {
     display: flex;
     justify-content: space-around;
     padding-top: 21px;

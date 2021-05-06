@@ -1,0 +1,55 @@
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container label {
+    width: 100%;
+    text-align: start;
+    margin: 3px 0;
+    height: 30%;
+    max-height: 30px;
+}
+
+.input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid var(--background-item-card-title-default);
+    height: calc(60% - 6px);
+    padding-left: 14px;
+    max-height: 50px;
+}
+
+.input-container input:focus {
+    outline: none;
+}
+
+.input-container p {
+    max-height: 30px;
+    height: 10%;
+    width: 100%;
+    text-align: right;
+    color: var(--color-validation-input);
+    font-size:  min(max(10px, 2vw), 15px);
+}
+
+.input-container input[type="submit"], 
+.input-container input[type="button"] {
+    padding: 0;
+    background-color: var(--background-color-menu);
+    color: var(--text-color);
+    cursor: pointer;
+    border: none;
+    transition: all ease-in 400ms;
+    font-weight: 700;
+    font-size: min(max(20px, 3vw), 20px);
+    text-transform: uppercase;
+}
+
+.input-container input[type="submit"]:hover {
+    filter: brightness(1.4);
+}

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import { AuthContext } from '../../providers/auth';
 
+import { Link } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
@@ -41,19 +42,19 @@ const Checkout = () => {
                         <h3>
                             Veículo Selecionado
                         </h3>
-                        <a href="#" className="">Alterar</a>
+                        <Link to="#" className="">Alterar</Link>
                         <div className="detalhe">
                             <div>
-                                <label><FaCar color="#fff" />
+                                <label className="detalhe-interno"><FaCar color="#fff" />
                                     <p>Chevrolet Bolt</p>
                                 </label>
-                            </div>
+                             </div>
                             <div className="segundoItem">
-                                <label><FaAdjust color="#fff" />
+                                <label className="detalhe-interno"><FaAdjust color="#fff" />
                                     <p>Vermelho Glory</p>
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
                     <div className="item">
@@ -62,30 +63,30 @@ const Checkout = () => {
                         </h3>
                         <div className="detalhe">
                             <div>
-                                <label><FaMoneyBillWaveAlt color="#fff" />
-                                    <Dropdown options={listaPreco} value={defaultPreco} />
+                                <label className="detalhe-interno"><FaMoneyBillWaveAlt color="#fff" />
+                                    <Dropdown options={listaPreco}  value={defaultPreco} />
                                 </label>
                             </div>
                             <div>
-                                <label><FaCalendarAlt color="#fff" />
-                                    <Dropdown options={listaTempo} value={defaultTempo} />
+                                <label className="detalhe-interno"><FaCalendarAlt color="#fff" />
+                                    <Dropdown options={listaTempo}  value={defaultTempo} />
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
                     <div className="item">
                         <h3>
                             Método de Pagamento
                         </h3>
-                        <a href="#" className="">Alterar</a>
+                        <Link to="#" className="">Alterar</Link>
                         <div className="detalhe">
                             <div>
-                                <label><FaMoneyCheck color="#fff" />
+                                <label className="detalhe-interno"><FaMoneyCheck color="#fff" />
                                     <p>**** **** **** 8745</p>
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
                     <h1> Opções de Retirada </h1>
@@ -96,15 +97,15 @@ const Checkout = () => {
                         </h3>
                         <div className="detalhe">
                             <div>
-                                <label><FaHome color="#fff" />
-                                    <div>
-                                        <p>Av. Sebastião Antonio Ribeiro, 570,</p><input type="radio" value="Male" name="gender" /><br></br>
-                                        <p className="segundaLinha">Maria José, Vespasiano - MG</p>
-                                    </div>
-
+                                <label className="detalhe-interno"><FaHome color="#fff" />
+                                <div>
+                                    <p>Av. Sebastião Antonio Ribeiro, 570,</p><input type="radio" value="Male" name="gender" /><br></br>
+                                    <p className="segundaLinha">Maria José, Vespasiano - MG</p>
+                                </div>
+                                    
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
                     <div className="item">
@@ -113,15 +114,15 @@ const Checkout = () => {
                         </h3>
                         <div className="detalhe">
                             <div>
-                                <label><FaHome color="#fff" />
-                                    <div>
-                                        <p>Av. Sebastião Antonio Ribeiro, 570,</p><input type="radio" value="Male" name="gender" /><br></br>
-                                        <p className="segundaLinha">Maria José, Vespasiano - MG</p>
-                                    </div>
-
+                                <label className="detalhe-interno"><FaHome color="#fff" />
+                                <div>
+                                    <p>Av. Sebastião Antonio Ribeiro, 570,</p><input type="radio" value="Male" name="gender" /><br></br>
+                                    <p className="segundaLinha">Maria José, Vespasiano - MG</p>
+                                </div>
+                                    
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
                     <div className="item">
@@ -130,22 +131,21 @@ const Checkout = () => {
                         </h3>
                         <div className="detalhe">
                             <div>
-                                <label><FaHome color="#fff" />
+                                <label className="detalhe-interno"><FaHome color="#fff" />
                                     <div>
                                         <p>Av. Sebastião Antonio Ribeiro, 570,</p><input type="radio" value="Male" name="gender" /><br></br>
                                         <p className="segundaLinha">Maria José, Vespasiano - MG</p>
                                     </div>
-
                                 </label>
                             </div>
-                        </div>
+                        </div>    
                     </div>
 
-                    <div className="container-botoes">
+                    <div className="checkout-container-botoes">
                         <button>Voltar</button>
                         <button>Continuar</button>
                     </div>
-
+        
                 </div>
             </main>
             {isLoginActive ? <Login /> : null}

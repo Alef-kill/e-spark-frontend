@@ -39,7 +39,7 @@ main{
     justify-content: center;
 }
 
-label {
+.container-checkout .detalhe-interno {
     display: flex;
 }
 
@@ -64,7 +64,7 @@ label {
     color: var(--text-color);
 }
 
-input {
+.detalhe-interno input {
     margin: -13px;
 }
 
@@ -85,14 +85,14 @@ input {
     top: 8px;
 }
 
-button {
+.checkout-container-botoes button {
     padding: 6px 20px;
     border-radius: 6px;
     border: none;
     color: var(--corAzulPrincipal);
 }
 
-.container-botoes {
+.checkout-container-botoes {
     display: flex;
     justify-content: space-around;
     padding-top: 21px;

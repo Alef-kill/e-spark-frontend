@@ -16,7 +16,7 @@
     width: 100%;
     height: 400px;
     border-radius: 20px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .container-about-car .image-car .title-car{
@@ -110,8 +110,12 @@
     margin: 60px auto;
 }
 
-.container-about-car .about-btn-rent button {
+.container-about-car .about-btn-rent a {
     width: 30%;
+}
+
+.container-about-car .about-btn-rent button {
+    width: 100%;
     min-width: 150px;
     height: 50px;
     cursor: pointer;

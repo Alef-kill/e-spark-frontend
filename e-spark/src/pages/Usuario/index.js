@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/auth";
-import { HeaderMenu } from "../../components/HeaderMenu/";
-import { LeftMenu } from "../../components/LeftMenu/";
-import { Footer } from "../../components/Footer/";
-import { Cadastro } from "../../components/Cadastro/";
-import { Login } from "../../components/Login/";
-import "./user.css";
+import { HeaderMenu } from "../../components/HeaderMenu";
+import { LeftMenu } from "../../components/LeftMenu";
+import { Footer } from "../../components/Footer";
+import { Cadastro } from "../../components/Cadastro";
+import { Login } from "../../components/Login";
+import "./usuario.css";
 
-const User = () => {
+const Usuario = () => {
   const { isLoginActive, isCadastroActive } = useContext(AuthContext);
   return (
     <section className="container-dados">
@@ -21,7 +21,7 @@ const User = () => {
             <section class="break2"></section>
             <input
               type="text"
-              class="input"
+              class="input-long"
               id="name"
               placeholder="Ex.: Bruno Silva Gomes"
               required="required"
@@ -115,7 +115,7 @@ const User = () => {
             <input
               type="text"
               id="mail"
-              class="input"
+              class="input-long"
               placeholder="Ex.: user@xxxxx.com"
               required="required"
             ></input>
@@ -190,4 +190,4 @@ const User = () => {
   );
 };
 
-export { User };
+export { Usuario };

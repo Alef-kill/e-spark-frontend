@@ -1,39 +1,12 @@
-.container-login-box.cadastrar {
-    min-height: 90vh;
-}
-
-.names {
-    margin-top: 5%;
-    width: 100%;
+.input-login-container.inline {
     display: flex;
+    justify-content: space-between;
 }
 
-.names .collumn2 {
-    width: 50%;
-    display: flex;
-    
-    flex-direction: column;
+.input-login-container.inline .input-container:first-child {
+    width: 35%;
 }
 
-.names .collumn2 input {
-    width: 90%;
-}
-
-#last_name {
-    width: 100%;
-}
-
-.names .collumn2 label {
-    text-align: start;
-    width: 90%;
-}
-
-#email {
-    border: none;
-    border-bottom: 2px solid var(--background-color-menu);
-    height: 40px;
-    padding-bottom: 0px;
-    font-size: 1.1rem;
-    color: var(--background-color-menu);
-    background-color: var(--background-login);
+.input-login-container.inline .input-container:last-child {
+    width: 60%;
 }

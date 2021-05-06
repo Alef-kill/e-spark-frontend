@@ -1,87 +1,151 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+
+import { Login } from '../Login';
+import { Input } from '../Input';
+import { Alert } from '../Alert';
 
 import { AuthContext } from '../../providers/auth';
+
+import closeIcon from '../../images/close.svg';
 
 import './cadastro.css';
 
 const Cadastro = () => {
+    const [firstName, setFirstName] = useState();
+    const [lastName, setLastName] = useState();
+    const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const { isCadastroActive, setIsCadastroActive } = useContext(AuthContext);
+    const [isAlert, setAlert] = useState();
+    const [textAlert, setTextAlert] = useState('');
 
-    async function handleCloseCadastro() {
+    const { isCadastroActive, setIsCadastroActive, setIsLoginActive } = useContext(AuthContext);
+
+    function handleCloseCadastro() {
         setIsCadastroActive(false);
+    }
+
+    function handleOpenLogin() {
+        handleCloseCadastro();
+        setIsLoginActive(true);
+    }
+
+    function handleCloseModaLogin() {
+        setIsCadastroActive(false);
+    }
+
+    function showAlert(text, time) {
+        setTextAlert(text);
+        setAlert(true);
+        setTimeout(() => {
+            setAlert(false);
+        }, time)
+    }
+
+    async function handleClickBtnRegister(e) {
+        e.preventDefault();
+
+        if (!firstName || !lastName || !username || !email || !password) {
+            showAlert('Preencha todos os campos', 5000)
+        }
+
+        /* const response = await fetch('http://localhost:5000/insertUser', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({
+                first_name: firstName,
+                last_name: lastName,
+                username: username,
+                email: email,
+                password: password
+            })
+        })
+        const responseToJson = await response.json();
+
+        if (responseToJson.status !== false) {
+            alert(responseToJson.messageSucess);
+        } */
     }
 
     return (
         <>
             {isCadastroActive ?
-                <div className="container-login">
-                    <div className="background-blur"></div>
-                    <div className="container-login-box cadastrar">
-                        <p className="close-login" onClick={handleCloseCadastro}>x</p>
+                <div className={"container-login"}>
+                    <div className="container-login-box">
 
-                        <h2>Criar conta</h2>
+                        <div className="container-login-top">
+                            <h2>Cadastrar</h2>
+                            <p className="close-login" ><img src={closeIcon} alt="close" onClick={handleCloseModaLogin} /></p>
+                        </div>
 
-                        <form onSubmit={''}>
+                        <form onSubmit={handleClickBtnRegister} className="form-login">
 
-                            <div className="names">
-                                <div className="collumn2">
-                                    <label htmlFor="fname">Primeiro nome</label>
-                                    <input
-                                        type="text"
-                                        id="first_name"
-                                        name="first_name"
-                                        placeholder="Digite o seu nome"
-                                        onChange={(e) => setEmail(e.target.value)} />
-                                </div>
-                                <div className="collumn2">
-                                    <label htmlFor="fname">Segundo nome</label>
-                                    <input
-                                        type="text"
-                                        id="last_name"
-                                        name="last_name"
-                                        placeholder="Digite o seu primeiro nome"
-                                        onChange={(e) => setEmail(e.target.value)} />
-                                </div>
+                            <div className="input-login-container inline">
+                                <Input
+                                    titleInput="Primeiro nome"
+                                    typeInput="text"
+                                    placeholderInput="alef"
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                />
+                                <Input
+                                    titleInput="Primeiro nome"
+                                    typeInput="text"
+                                    placeholderInput="master"
+                                    onChange={(e) => setLastName(e.target.value)}
+                                />
                             </div>
 
-                            <label htmlFor="fname">Nome de usuário</label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                placeholder="Digite o seu nome de usuário"
-                                onChange={(e) => setEmail(e.target.value)} />
+
+                            <div className="input-login-container">
+                                <Input
+                                    titleInput="Nome de usuário"
+                                    typeInput="text"
+                                    placeholderInput="Son Goku"
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
+                            </div>
+                            <div className="input-login-container">
+                                <Input
+                                    titleInput="Digite o seu E-mail"
+                                    typeInput="email"
+                                    placeholderInput="alefmastertutor@gmail.com"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="input-login-container">
+                                <Input
+                                    titleInput="Digite uma senha"
+                                    typeInput="password"
+                                    placeholderInput="DAGADFDSA#!#$@123"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
 
 
-                            <label htmlFor="fname">E-mail</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Digite o seu e-mail"
-                                onChange={(e) => setEmail(e.target.value)} />
-
-                            <label htmlFor="lname">Senha</label>
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="Digite a sua senha"
-                                onChange={(e) => setPassword(e.target.value)} />
-
-                            <input type="submit" value="Entrar" />
+                            <div className="input-login-container">
+                                <Input
+                                    typeInput="submit"
+                                    valueInput="Entrar"
+                                />
+                            </div>
                         </form>
                         <div className="not-account">
                             <p>Ainda não tem uma conta, cadastre-se agora mesmo</p>
-                            <Link to="/about"><button>Criar conta</button></Link>
+                            <button onClick={handleOpenLogin} >Criar conta</button>
                         </div>
                     </div>
                 </div>
-                : null}
+                :
+                <Login />}
+            {isAlert ? <Alert position="top-right" textAlert={textAlert} /> : null}
         </>
     );
 }

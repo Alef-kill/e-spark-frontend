@@ -41,6 +41,15 @@
   padding: 2px 5px;
 }
 
+.input-long {
+  border-radius: 5px;
+  outline: none;
+  background: #e2d7f5;
+  height: 30px;
+  width: 400px;
+  padding: 2px 5px;
+}
+
 .submit,
 .reset {
   background-color: var(--background-color-menu);
@@ -89,4 +98,3 @@
 .dataNasc {
   padding: 0mm;
 }
-

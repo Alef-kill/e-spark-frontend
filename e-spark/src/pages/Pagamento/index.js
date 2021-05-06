@@ -22,26 +22,26 @@ const Pagamento = () => {
             <HeaderMenu />
             <LeftMenu />
 
-            <main>
+            <main className="main-pagamento">
             <div className="container-pagamento">
                 <h1 className="container-home-h1">
                     Pronto :)
                 </h1>
 
-                <figure>
+                <figure className="img-pagamento">
                     <img src={CarroIcon} alt="carro-bar-icon" />
                 </figure>
                 
-                <p className="titulo">Pagamento aprovado!</p>
-                <p className="descricao">Tudo certo Janete! Você já pode retirar seu Chevrolet Bolt na Filial 03!</p>
+                <p className="titulo-pagamento">Pagamento aprovado!</p>
+                <p className="descricao-pagamento">Tudo certo Janete! Você já pode retirar seu Chevrolet Bolt na Filial 03!</p>
 
                 <div className="filial">
-                    <label><FaHome color="#00B4D8" font-size="45px" />
+                    <label className="detalhe-interno"><FaHome color="#00B4D8" font-size="45px" />
                         <p>Av. Sebastião Antonio Ribeiro, 570, Maria José, Vespasiano - MG</p>       
                     </label>
                 </div>
 
-                <div className="container-botoes">
+                <div className="pagamento-container-botoes">
                         <button className="btn-end">Ver rota</button>
                 </div>
             </div>

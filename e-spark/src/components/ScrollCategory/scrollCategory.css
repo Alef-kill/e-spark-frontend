@@ -48,3 +48,11 @@
     scroll-snap-align: start;
     cursor: pointer;
 }
+
+.scroll-category-item .item-scroll p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+     width: 100%;
+}
